@@ -30,7 +30,6 @@
 		C30434711BF6EF8B006FB1B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */; };
 		C30434731BF6F0F5006FB1B9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */; };
 		C30434751BF6F113006FB1B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434741BF6F113006FB1B9 /* MapKit.framework */; };
-		C36D21AD1BF74295008EA16B /* LeagueSpartan-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C36D21AC1BF74295008EA16B /* LeagueSpartan-Bold.otf */; };
 		C36EDCAA1BF730A900F10CBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCA91BF730A900F10CBB /* ProfileViewController.swift */; };
 		C36EDCAC1BF733DB00F10CBB /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCAB1BF733DB00F10CBB /* UploadViewController.swift */; };
 		C36EDCAE1BF733E700F10CBB /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCAD1BF733E700F10CBB /* ActivityViewController.swift */; };
@@ -357,7 +356,6 @@
 				370093CC1BF6EDEE000738AE /* LaunchScreen.storyboard in Resources */,
 				370093C91BF6EDEE000738AE /* Assets.xcassets in Resources */,
 				370093C71BF6EDEE000738AE /* Main.storyboard in Resources */,
-				C36D21AD1BF74295008EA16B /* LeagueSpartan-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

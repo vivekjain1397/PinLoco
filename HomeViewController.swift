@@ -30,6 +30,10 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
 //        addAnnotation()
     }
+    override func viewDidAppear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.doUpload = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

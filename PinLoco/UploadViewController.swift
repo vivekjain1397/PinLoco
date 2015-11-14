@@ -11,6 +11,8 @@ import DKImagePickerController
 import Parse
 
 class UploadViewController: UIViewController {
+    var doUpload = true
+    var images = [DKAsset]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +33,20 @@ class UploadViewController: UIViewController {
         
         pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
             print("didSelectAssets")
-            print(assets)
+            for pic in assets {
+                print(pic)
+                self.images.append(pic)
+            }
         }
         
-        self.presentViewController(pickerController, animated: true) {}
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let doUpload = appDelegate.doUpload
+        if  doUpload {
+            self.presentViewController(pickerController, animated: true) {}
+            appDelegate.doUpload = false
+            print("images")
+            print(images)
+        }
     }
 
     override func didReceiveMemoryWarning() {
