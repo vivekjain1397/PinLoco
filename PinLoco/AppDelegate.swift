@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Parse.enableLocalDatastore()
+        
+        Parse.setApplicationId("j9Ur4KI6CddQKUTKXP9jeGB6f1SsxSmQ1zEJCReL",
+            clientKey: "ceUp4lUs3sFmd5KrULhVaCb2e9HBGVOjXSaZpOJD")
+        
+        var initialViewController: UIViewController?
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if (PFUser.currentUser() == nil) {
+            initialViewController = storyboard.instantiateViewControllerWithIdentifier("Login") as! LoginViewController
+            
+        }
+        else {
+            initialViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
+        }
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
         return true
     }
 
