@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		370093C21BF6EDEE000738AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370093C11BF6EDEE000738AE /* AppDelegate.swift */; };
-		370093C41BF6EDEE000738AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370093C31BF6EDEE000738AE /* ViewController.swift */; };
 		370093C71BF6EDEE000738AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 370093C51BF6EDEE000738AE /* Main.storyboard */; };
 		370093C91BF6EDEE000738AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 370093C81BF6EDEE000738AE /* Assets.xcassets */; };
 		370093CC1BF6EDEE000738AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 370093CA1BF6EDEE000738AE /* LaunchScreen.storyboard */; };
 		370093D71BF6EDEE000738AE /* PinLocoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370093D61BF6EDEE000738AE /* PinLocoTests.swift */; };
 		370093E21BF6EDEE000738AE /* PinLocoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370093E11BF6EDEE000738AE /* PinLocoUITests.swift */; };
+		C30434711BF6EF8B006FB1B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */; };
+		C30434731BF6F0F5006FB1B9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */; };
+		C30434751BF6F113006FB1B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434741BF6F113006FB1B9 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		370093BE1BF6EDEE000738AE /* PinLoco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinLoco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		370093C11BF6EDEE000738AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		370093C31BF6EDEE000738AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		370093C61BF6EDEE000738AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		370093C81BF6EDEE000738AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		370093CB1BF6EDEE000738AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		370093DD1BF6EDEE000738AE /* PinLocoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinLocoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		370093E11BF6EDEE000738AE /* PinLocoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLocoUITests.swift; sourceTree = "<group>"; };
 		370093E31BF6EDEE000738AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
+		C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C30434741BF6F113006FB1B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30434751BF6F113006FB1B9 /* MapKit.framework in Frameworks */,
+				C30434731BF6F0F5006FB1B9 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,8 @@
 		370093B51BF6EDEE000738AE = {
 			isa = PBXGroup;
 			children = (
+				C30434741BF6F113006FB1B9 /* MapKit.framework */,
+				C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */,
 				370093C01BF6EDEE000738AE /* PinLoco */,
 				370093D51BF6EDEE000738AE /* PinLocoTests */,
 				370093E01BF6EDEE000738AE /* PinLocoUITests */,
@@ -97,8 +105,8 @@
 		370093C01BF6EDEE000738AE /* PinLoco */ = {
 			isa = PBXGroup;
 			children = (
+				C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */,
 				370093C11BF6EDEE000738AE /* AppDelegate.swift */,
-				370093C31BF6EDEE000738AE /* ViewController.swift */,
 				370093C51BF6EDEE000738AE /* Main.storyboard */,
 				370093C81BF6EDEE000738AE /* Assets.xcassets */,
 				370093CA1BF6EDEE000738AE /* LaunchScreen.storyboard */,
@@ -192,6 +200,11 @@
 				TargetAttributes = {
 					370093BD1BF6EDEE000738AE = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					370093D11BF6EDEE000738AE = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -255,8 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				370093C41BF6EDEE000738AE /* ViewController.swift in Sources */,
 				370093C21BF6EDEE000738AE /* AppDelegate.swift in Sources */,
+				C30434711BF6EF8B006FB1B9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +494,7 @@
 				370093E81BF6EDEE000738AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		370093E91BF6EDEE000738AE /* Build configuration list for PBXNativeTarget "PinLocoTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +503,7 @@
 				370093EB1BF6EDEE000738AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		370093EC1BF6EDEE000738AE /* Build configuration list for PBXNativeTarget "PinLocoUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +512,7 @@
 				370093EE1BF6EDEE000738AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

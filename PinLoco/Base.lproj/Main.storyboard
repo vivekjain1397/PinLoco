@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LZP-zw-Crb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Home View Controller-->
+        <scene sceneID="4zM-iz-NEE">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LZP-zw-Crb" customClass="HomeViewController" customModule="PinLoco" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Jp5-Av-OaP"/>
+                        <viewControllerLayoutGuide type="bottom" id="uRK-iT-EqZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="0bP-pl-66T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oCe-Om-9Q5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsY-MQ-4ED">
+                                <rect key="frame" x="137" y="472" width="47" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Locate"/>
+                                <connections>
+                                    <action selector="locateUser:" destination="LZP-zw-Crb" eventType="touchUpInside" id="z63-zC-6S7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oCe-Om-9Q5" firstAttribute="leading" secondItem="0bP-pl-66T" secondAttribute="leading" id="O0g-zn-U3L"/>
+                            <constraint firstAttribute="trailing" secondItem="oCe-Om-9Q5" secondAttribute="trailing" id="e4b-IW-1ZA"/>
+                            <constraint firstItem="oCe-Om-9Q5" firstAttribute="bottom" secondItem="uRK-iT-EqZ" secondAttribute="top" id="oZM-hU-Pkq"/>
+                            <constraint firstItem="oCe-Om-9Q5" firstAttribute="top" secondItem="0bP-pl-66T" secondAttribute="top" id="w9I-Fz-FCb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="oCe-Om-9Q5" id="Jj7-BV-KGx"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ua-SH-Ecu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="173" y="257"/>
         </scene>
     </scenes>
 </document>
