@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B86477B4216ADACB57BBBF9 /* Pods_PinLoco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59C84938B21EF3E95D8DFB7 /* Pods_PinLoco.framework */; };
 		370093C21BF6EDEE000738AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370093C11BF6EDEE000738AE /* AppDelegate.swift */; };
 		370093C71BF6EDEE000738AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 370093C51BF6EDEE000738AE /* Main.storyboard */; };
 		370093C91BF6EDEE000738AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 370093C81BF6EDEE000738AE /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C70D3FC8BFE4D3529B1F0C9 /* Pods-PinLoco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinLoco.release.xcconfig"; path = "Pods/Target Support Files/Pods-PinLoco/Pods-PinLoco.release.xcconfig"; sourceTree = "<group>"; };
 		370093BE1BF6EDEE000738AE /* PinLoco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinLoco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		370093C11BF6EDEE000738AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		370093C61BF6EDEE000738AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		57F690C91BF70EE200F274AD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		57F690CB1BF70F2B00F274AD /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		57F690CD1BF70F7300F274AD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		89EA1CB3A18F66A3AED1549A /* Pods-PinLoco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinLoco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PinLoco/Pods-PinLoco.debug.xcconfig"; sourceTree = "<group>"; };
+		A59C84938B21EF3E95D8DFB7 /* Pods_PinLoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinLoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C30434741BF6F113006FB1B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -103,6 +107,7 @@
 				C30434751BF6F113006FB1B9 /* MapKit.framework in Frameworks */,
 				57F690BC1BF70E3000F274AD /* Parse.framework in Frameworks */,
 				C30434731BF6F0F5006FB1B9 /* CoreLocation.framework in Frameworks */,
+				2B86477B4216ADACB57BBBF9 /* Pods_PinLoco.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +146,8 @@
 				370093D51BF6EDEE000738AE /* PinLocoTests */,
 				370093E01BF6EDEE000738AE /* PinLocoUITests */,
 				370093BF1BF6EDEE000738AE /* Products */,
+				90C2DE85723A2F62D59DF747 /* Pods */,
+				E1F33641BCAF67DE612D342C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,6 +194,15 @@
 			path = PinLocoUITests;
 			sourceTree = "<group>";
 		};
+		90C2DE85723A2F62D59DF747 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89EA1CB3A18F66A3AED1549A /* Pods-PinLoco.debug.xcconfig */,
+				0C70D3FC8BFE4D3529B1F0C9 /* Pods-PinLoco.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C36EDCAF1BF733F200F10CBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +224,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		E1F33641BCAF67DE612D342C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A59C84938B21EF3E95D8DFB7 /* Pods_PinLoco.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,9 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 370093E61BF6EDEE000738AE /* Build configuration list for PBXNativeTarget "PinLoco" */;
 			buildPhases = (
+				1C9B8160F34CB68256309FC7 /* Check Pods Manifest.lock */,
 				370093BA1BF6EDEE000738AE /* Sources */,
 				370093BB1BF6EDEE000738AE /* Frameworks */,
 				370093BC1BF6EDEE000738AE /* Resources */,
+				F24697DFB6DFAA837278A431 /* Embed Pods Frameworks */,
+				CB85D5A5978DB4B5EE7F694C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,6 +364,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C9B8160F34CB68256309FC7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB85D5A5978DB4B5EE7F694C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PinLoco/Pods-PinLoco-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F24697DFB6DFAA837278A431 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PinLoco/Pods-PinLoco-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		370093BA1BF6EDEE000738AE /* Sources */ = {
@@ -487,6 +562,7 @@
 		};
 		370093E71BF6EDEE000738AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89EA1CB3A18F66A3AED1549A /* Pods-PinLoco.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -502,6 +578,7 @@
 		};
 		370093E81BF6EDEE000738AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C70D3FC8BFE4D3529B1F0C9 /* Pods-PinLoco.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

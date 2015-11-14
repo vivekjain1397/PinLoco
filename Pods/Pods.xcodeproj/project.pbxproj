@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		011BFA3457B7495EEDFCFB1B109F659F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7243FB3A776413F8B6B638FA9D4A3EA /* Foundation.framework */; };
+		355599B86BBDAA0971FE58A6C5D69DE7 /* DKCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3348BFA8119117B83A13F05DE828E8CA /* DKCamera.swift */; };
+		36F384CAB656E9C5EFD4C99370723262 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0149A2C178AB2C1D7A2C2CE10051837E /* AssetsLibrary.framework */; };
+		57FA18C6CBFE0A997F9D6D44EE7FDED0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7243FB3A776413F8B6B638FA9D4A3EA /* Foundation.framework */; };
+		658547E2AD45A0BA64343BA5DA9D2751 /* DKImagePickerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDC1A0251FDC8CAD00EEADE48420FE5 /* DKImagePickerController-dummy.m */; };
+		65EB1F701E9FDD06F0B59A955CBAFC3B /* Pods-PinLoco-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9009AB66625B4148A4D00080B1871F3 /* Pods-PinLoco-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81F7DC9AA153BE9447DF37F5BEB8CECD /* DKAssetGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FB50F7C96A108BFD193A6CA1D5FF2 /* DKAssetGroupVC.swift */; };
+		868057C45FDD15E10BDFC6E9CA82C49C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E73A9C492CA6B54B5F2C7E811942D72 /* AVFoundation.framework */; };
+		9BDDFBDDDA1CA5B1F217BE9F30FAACD1 /* DKAssetGroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57DEFBC13AF249615EF33E29BDE7801 /* DKAssetGroupDetailVC.swift */; };
+		9E92CA73B2C6F3B7EE718D7C8991BBBB /* DKImagePickerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E56EDF3BFA00251B4EC67299AB712B /* DKImagePickerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3EB81276F9A55C80948F75C895CEFBB /* DKImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB01952E895233D34D699DD679AF7AF8 /* DKImagePickerController.swift */; };
+		B4AC18E8F6B7C99219370C0F52AD6E35 /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4860818BAC6F235E7AEB719D264084E1 /* DKCameraResource.bundle */; };
+		C34A6DD10B9F533758B20FB35536FFA7 /* DKImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31095D3411C8B2516EC168E30CAB2ED /* DKImageResource.swift */; };
+		C5306EC3A3C3034EF9461945A622626E /* DKPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95502CEA8A08F50661B9D403153F7E95 /* DKPopoverViewController.swift */; };
+		E243BFBCBCE68AC227A03C6CCC3DFC88 /* DKImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71C32962430D6B48C8730187F4883234 /* DKImagePickerController.bundle */; };
+		E6B3678B12897BDF0F436C631E758B3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9982C6AF3DCFB7F3CDE8E290A02071 /* UIKit.framework */; };
+		E8C2D112C98C4D5D14000DB6AA9BA050 /* Pods-PinLoco-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AA2A2B9DD58A10442E378DBB31620 /* Pods-PinLoco-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5DD4D1BB7F46F699C4573EB09641807 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 671D5AEB5DD6B90DE53CCB399354E82A;
+			remoteInfo = DKImagePickerController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E56EDF3BFA00251B4EC67299AB712B /* DKImagePickerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKImagePickerController-umbrella.h"; sourceTree = "<group>"; };
+		0149A2C178AB2C1D7A2C2CE10051837E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		071AA2A2B9DD58A10442E378DBB31620 /* Pods-PinLoco-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PinLoco-dummy.m"; sourceTree = "<group>"; };
+		107497BBDE22D2838C331A1E9B9F5211 /* Pods-PinLoco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PinLoco.release.xcconfig"; sourceTree = "<group>"; };
+		1A4EB0D39BB40D239C8288E3C39A2B7A /* Pods-PinLoco-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PinLoco-resources.sh"; sourceTree = "<group>"; };
+		2746FEFF3C169D3D12EA9BEFE77CEEA1 /* Pods_PinLoco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinLoco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A81ED37D2E5C2009159FBFAEF150581 /* DKImagePickerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DKImagePickerController.xcconfig; sourceTree = "<group>"; };
+		3348BFA8119117B83A13F05DE828E8CA /* DKCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKCamera.swift; path = DKCamera/DKCamera.swift; sourceTree = "<group>"; };
+		3D8FB50F7C96A108BFD193A6CA1D5FF2 /* DKAssetGroupVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupVC.swift; path = DKImagePickerController/DKAssetGroupVC.swift; sourceTree = "<group>"; };
+		3EC60D6F2EA5BE85AE5474A98FFE8760 /* Pods-PinLoco.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PinLoco.modulemap"; sourceTree = "<group>"; };
+		4860818BAC6F235E7AEB719D264084E1 /* DKCameraResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKCameraResource.bundle; path = DKCamera/DKCameraResource.bundle; sourceTree = "<group>"; };
+		4C9982C6AF3DCFB7F3CDE8E290A02071 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5AC8D7282C1AF6653A8119802453A318 /* Pods-PinLoco-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PinLoco-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5E73A9C492CA6B54B5F2C7E811942D72 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		697D3A4033CCF3BE7B021A0C3FE4F0BF /* Pods-PinLoco-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PinLoco-acknowledgements.plist"; sourceTree = "<group>"; };
+		71C32962430D6B48C8730187F4883234 /* DKImagePickerController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKImagePickerController.bundle; path = DKImagePickerController/DKImagePickerController.bundle; sourceTree = "<group>"; };
+		77934411DE76429450A77ACD3E42B642 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E11291EB947385AE19688055CD3E73C /* DKImagePickerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKImagePickerController-prefix.pch"; sourceTree = "<group>"; };
+		8F3897BD3761380637528ADBEF77E6A0 /* DKImagePickerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKImagePickerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9462E0A962B27D6A980DB49B4EA13F19 /* Pods-PinLoco-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PinLoco-frameworks.sh"; sourceTree = "<group>"; };
+		95502CEA8A08F50661B9D403153F7E95 /* DKPopoverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKPopoverViewController.swift; path = DKImagePickerController/DKPopoverViewController.swift; sourceTree = "<group>"; };
+		A57DEFBC13AF249615EF33E29BDE7801 /* DKAssetGroupDetailVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupDetailVC.swift; path = DKImagePickerController/DKAssetGroupDetailVC.swift; sourceTree = "<group>"; };
+		BA027368B21FDB34F59F009413EB98B3 /* Pods-PinLoco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PinLoco.debug.xcconfig"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BB01952E895233D34D699DD679AF7AF8 /* DKImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImagePickerController.swift; path = DKImagePickerController/DKImagePickerController.swift; sourceTree = "<group>"; };
+		C31095D3411C8B2516EC168E30CAB2ED /* DKImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImageResource.swift; path = DKImagePickerController/DKImageResource.swift; sourceTree = "<group>"; };
+		E5C8374CA6F40EE23E4C64FA984D15AC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7243FB3A776413F8B6B638FA9D4A3EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E9009AB66625B4148A4D00080B1871F3 /* Pods-PinLoco-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PinLoco-umbrella.h"; sourceTree = "<group>"; };
+		ED56818DE95014AC3B1681AE22585F8F /* DKImagePickerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DKImagePickerController.modulemap; sourceTree = "<group>"; };
+		FEDC1A0251FDC8CAD00EEADE48420FE5 /* DKImagePickerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DKImagePickerController-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7E45D5B6BF18DA5E34E50974D5A14C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36F384CAB656E9C5EFD4C99370723262 /* AssetsLibrary.framework in Frameworks */,
+				868057C45FDD15E10BDFC6E9CA82C49C /* AVFoundation.framework in Frameworks */,
+				011BFA3457B7495EEDFCFB1B109F659F /* Foundation.framework in Frameworks */,
+				E6B3678B12897BDF0F436C631E758B3D /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE164EA4BB05AF9942660A29C98AC131 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57FA18C6CBFE0A997F9D6D44EE7FDED0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B49F84404EFBD4A498FFE6D21282AC87 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1FFB5C59DF2A65965BC053A7E1D244FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4860818BAC6F235E7AEB719D264084E1 /* DKCameraResource.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		61B3C2FA5870D92B7DCF0F31F5B74013 /* DKImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				A57DEFBC13AF249615EF33E29BDE7801 /* DKAssetGroupDetailVC.swift */,
+				3D8FB50F7C96A108BFD193A6CA1D5FF2 /* DKAssetGroupVC.swift */,
+				BB01952E895233D34D699DD679AF7AF8 /* DKImagePickerController.swift */,
+				C31095D3411C8B2516EC168E30CAB2ED /* DKImageResource.swift */,
+				95502CEA8A08F50661B9D403153F7E95 /* DKPopoverViewController.swift */,
+				C5A92A9809D22C34E17992BE83F285C9 /* Camera */,
+				6E2A9B29BBCECF6D7133264015E480FD /* Resources */,
+				9B71B72C4E805B2DAC21C9E0722593E9 /* Support Files */,
+			);
+			path = DKImagePickerController;
+			sourceTree = "<group>";
+		};
+		6E2A9B29BBCECF6D7133264015E480FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				71C32962430D6B48C8730187F4883234 /* DKImagePickerController.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		73CF6FB209B6D56AB8CFE174AD383DEA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C954122037C0A20C22B4CCB6BE9BEECF /* Pods-PinLoco */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
+				A6CFA8C3501A0F364B7348FFA3BA1DAF /* Pods */,
+				DE953468B785D2FBA71D96E1AA576149 /* Products */,
+				73CF6FB209B6D56AB8CFE174AD383DEA /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9B71B72C4E805B2DAC21C9E0722593E9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED56818DE95014AC3B1681AE22585F8F /* DKImagePickerController.modulemap */,
+				2A81ED37D2E5C2009159FBFAEF150581 /* DKImagePickerController.xcconfig */,
+				FEDC1A0251FDC8CAD00EEADE48420FE5 /* DKImagePickerController-dummy.m */,
+				7E11291EB947385AE19688055CD3E73C /* DKImagePickerController-prefix.pch */,
+				00E56EDF3BFA00251B4EC67299AB712B /* DKImagePickerController-umbrella.h */,
+				E5C8374CA6F40EE23E4C64FA984D15AC /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DKImagePickerController";
+			sourceTree = "<group>";
+		};
+		A6CFA8C3501A0F364B7348FFA3BA1DAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61B3C2FA5870D92B7DCF0F31F5B74013 /* DKImagePickerController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B49F84404EFBD4A498FFE6D21282AC87 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0149A2C178AB2C1D7A2C2CE10051837E /* AssetsLibrary.framework */,
+				5E73A9C492CA6B54B5F2C7E811942D72 /* AVFoundation.framework */,
+				E7243FB3A776413F8B6B638FA9D4A3EA /* Foundation.framework */,
+				4C9982C6AF3DCFB7F3CDE8E290A02071 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C5A92A9809D22C34E17992BE83F285C9 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				3348BFA8119117B83A13F05DE828E8CA /* DKCamera.swift */,
+				1FFB5C59DF2A65965BC053A7E1D244FA /* Resources */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		C954122037C0A20C22B4CCB6BE9BEECF /* Pods-PinLoco */ = {
+			isa = PBXGroup;
+			children = (
+				77934411DE76429450A77ACD3E42B642 /* Info.plist */,
+				3EC60D6F2EA5BE85AE5474A98FFE8760 /* Pods-PinLoco.modulemap */,
+				5AC8D7282C1AF6653A8119802453A318 /* Pods-PinLoco-acknowledgements.markdown */,
+				697D3A4033CCF3BE7B021A0C3FE4F0BF /* Pods-PinLoco-acknowledgements.plist */,
+				071AA2A2B9DD58A10442E378DBB31620 /* Pods-PinLoco-dummy.m */,
+				9462E0A962B27D6A980DB49B4EA13F19 /* Pods-PinLoco-frameworks.sh */,
+				1A4EB0D39BB40D239C8288E3C39A2B7A /* Pods-PinLoco-resources.sh */,
+				E9009AB66625B4148A4D00080B1871F3 /* Pods-PinLoco-umbrella.h */,
+				BA027368B21FDB34F59F009413EB98B3 /* Pods-PinLoco.debug.xcconfig */,
+				107497BBDE22D2838C331A1E9B9F5211 /* Pods-PinLoco.release.xcconfig */,
+			);
+			name = "Pods-PinLoco";
+			path = "Target Support Files/Pods-PinLoco";
+			sourceTree = "<group>";
+		};
+		DE953468B785D2FBA71D96E1AA576149 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F3897BD3761380637528ADBEF77E6A0 /* DKImagePickerController.framework */,
+				2746FEFF3C169D3D12EA9BEFE77CEEA1 /* Pods_PinLoco.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0173FF1F93CC2B809187845B3B5D2E0D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65EB1F701E9FDD06F0B59A955CBAFC3B /* Pods-PinLoco-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4B09E60EFE7D5411FFF1F1AADEA94AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E92CA73B2C6F3B7EE718D7C8991BBBB /* DKImagePickerController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1743D78E6DDFBAFD8094BB44BB8BD7D4 /* Pods-PinLoco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 736AFC3172C23867556FFD362257A029 /* Build configuration list for PBXNativeTarget "Pods-PinLoco" */;
+			buildPhases = (
+				59E1364FC5E081923BD1CF8340D7E80F /* Sources */,
+				FE164EA4BB05AF9942660A29C98AC131 /* Frameworks */,
+				0173FF1F93CC2B809187845B3B5D2E0D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				271CEB6B692FA9409AE0F49B1E116DB4 /* PBXTargetDependency */,
+			);
+			name = "Pods-PinLoco";
+			productName = "Pods-PinLoco";
+			productReference = 2746FEFF3C169D3D12EA9BEFE77CEEA1 /* Pods_PinLoco.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		671D5AEB5DD6B90DE53CCB399354E82A /* DKImagePickerController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6E4844578EE79A0C400EA985CB6D5C5 /* Build configuration list for PBXNativeTarget "DKImagePickerController" */;
+			buildPhases = (
+				2481C17767FE0E00508895FD2A7BA1F3 /* Sources */,
+				F7E45D5B6BF18DA5E34E50974D5A14C5 /* Frameworks */,
+				B1A9611164175FCE12DB3729C30103C4 /* Resources */,
+				C4B09E60EFE7D5411FFF1F1AADEA94AC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DKImagePickerController;
+			productName = DKImagePickerController;
+			productReference = 8F3897BD3761380637528ADBEF77E6A0 /* DKImagePickerController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = DE953468B785D2FBA71D96E1AA576149 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				671D5AEB5DD6B90DE53CCB399354E82A /* DKImagePickerController */,
+				1743D78E6DDFBAFD8094BB44BB8BD7D4 /* Pods-PinLoco */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B1A9611164175FCE12DB3729C30103C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4AC18E8F6B7C99219370C0F52AD6E35 /* DKCameraResource.bundle in Resources */,
+				E243BFBCBCE68AC227A03C6CCC3DFC88 /* DKImagePickerController.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2481C17767FE0E00508895FD2A7BA1F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDDFBDDDA1CA5B1F217BE9F30FAACD1 /* DKAssetGroupDetailVC.swift in Sources */,
+				81F7DC9AA153BE9447DF37F5BEB8CECD /* DKAssetGroupVC.swift in Sources */,
+				355599B86BBDAA0971FE58A6C5D69DE7 /* DKCamera.swift in Sources */,
+				658547E2AD45A0BA64343BA5DA9D2751 /* DKImagePickerController-dummy.m in Sources */,
+				A3EB81276F9A55C80948F75C895CEFBB /* DKImagePickerController.swift in Sources */,
+				C34A6DD10B9F533758B20FB35536FFA7 /* DKImageResource.swift in Sources */,
+				C5306EC3A3C3034EF9461945A622626E /* DKPopoverViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59E1364FC5E081923BD1CF8340D7E80F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8C2D112C98C4D5D14000DB6AA9BA050 /* Pods-PinLoco-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		271CEB6B692FA9409AE0F49B1E116DB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DKImagePickerController;
+			target = 671D5AEB5DD6B90DE53CCB399354E82A /* DKImagePickerController */;
+			targetProxy = C5DD4D1BB7F46F699C4573EB09641807 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7E8E67C43E47C96C9FFFF425BFBD2365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA027368B21FDB34F59F009413EB98B3 /* Pods-PinLoco.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PinLoco/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PinLoco/Pods-PinLoco.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PinLoco;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B0687C769989A52C7CDF2EE177073E74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 107497BBDE22D2838C331A1E9B9F5211 /* Pods-PinLoco.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PinLoco/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PinLoco/Pods-PinLoco.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_PinLoco;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC7D9EA6CC66BF5280635BA299FD15F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A81ED37D2E5C2009159FBFAEF150581 /* DKImagePickerController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DKImagePickerController/DKImagePickerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DKImagePickerController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DKImagePickerController/DKImagePickerController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DKImagePickerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C83583C26A24DE6FFFDE2A7C762B530D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A81ED37D2E5C2009159FBFAEF150581 /* DKImagePickerController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DKImagePickerController/DKImagePickerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DKImagePickerController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DKImagePickerController/DKImagePickerController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DKImagePickerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		736AFC3172C23867556FFD362257A029 /* Build configuration list for PBXNativeTarget "Pods-PinLoco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E8E67C43E47C96C9FFFF425BFBD2365 /* Debug */,
+				B0687C769989A52C7CDF2EE177073E74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6E4844578EE79A0C400EA985CB6D5C5 /* Build configuration list for PBXNativeTarget "DKImagePickerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C83583C26A24DE6FFFDE2A7C762B530D /* Debug */,
+				BC7D9EA6CC66BF5280635BA299FD15F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
