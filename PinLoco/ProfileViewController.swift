@@ -8,9 +8,11 @@
 
 import UIKit
 import Parse
+import MapKit
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    var locationmanager=CLLocationManager()
+    @IBOutlet weak var mapView: MKMapView!
     @IBAction func logOutButton(sender: AnyObject) {
         PFUser.logOut()
         
