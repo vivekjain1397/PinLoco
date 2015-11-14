@@ -44,45 +44,55 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         
+        addAnnotation()
+        
 //        UIImage *annotationImage = [UIImage imageNamed:@"annotation-image"]; //NOTE: Using a UIImageView will not work
 //        annotationView.image = annotationImage; // NOTE: Make sure annotationView is an instance of MKAn
     }
     
-//    func addAnnotation() {
-//        let lat = 37.3175
-//        let long = -122.0419
-//        
-//        var annotationView: MKPinAnnotationView!
-//        var myAnnotation: CustomPointAnnotation!
-//        
-//        myAnnotation = CustomPointAnnotation()
-//        myAnnotation.title = "Hello"
-//        myAnnotation.subtitle = "Nick"
-//        myAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-//        myAnnotation.pinImageName = "High Income"
-//        annotationView = MKPinAnnotationView(annotation: myAnnotation, reuseIdentifier: "pin")
-//        self.mapView.addAnnotation(annotationView.annotation!)
-//    }
+    func addAnnotation() {
+        let lat = 37.3175
+        let long = -122.0419
+        
+        var annotationView: MKPinAnnotationView!
+        var myAnnotation = MKPointAnnotation()
+
+        myAnnotation.title = "Hello"
+        myAnnotation.subtitle = "Nick"
+        myAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+
+        self.mapView.addAnnotation(myAnnotation)
+    }
     
-//    func mapView(mapView: MKMapView,
-//        viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
-//            print("hello")
-//            let reuseIdentifier = "pin"
-//            
-//            var v = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseIdentifier)
-//            if v == nil {
-//                v = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-//                v!.canShowCallout = true
-//            }
-//            else {
-//                v!.annotation = annotation
-//            }
-//            
-//            let customPointAnnotation = annotation as! CustomPointAnnotation
-//            v!.image = UIImage(named:customPointAnnotation.pinImageName)
-//            
-//            return v
-//    }
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView! {
+        
+        
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let reuseId = String(stringInterpolationSegment: annotation.coordinate.longitude)
+        
+        
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        
+        if pinView == nil {
+            
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            
+        }
+        
+        let button = UIButton(type: UIButtonType.DetailDisclosure)
+        button.addTarget(self, action: "pin_press:", forControlEvents: .TouchUpInside)
+        pinView?.rightCalloutAccessoryView = button
+        
+        return pinView
+    }
+    
+    func pin_press(sender: UIButton!) {
+        print("PIN PRESSED LOL")
+    }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
