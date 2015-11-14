@@ -27,6 +27,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             self.mapView.setRegion(region, animated: true)
             self.locationManager.stopUpdatingLocation()
         }
+        
+        addAnnotation()
     }
     
     override func viewDidLoad() {
@@ -37,6 +39,45 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
+        
+//        UIImage *annotationImage = [UIImage imageNamed:@"annotation-image"]; //NOTE: Using a UIImageView will not work
+//        annotationView.image = annotationImage; // NOTE: Make sure annotationView is an instance of MKAn
+    }
+    
+    func addAnnotation() {
+        let lat = 37.3175
+        let long = -122.0419
+        
+        var annotationView: MKPinAnnotationView!
+        var myAnnotation: CustomPointAnnotation!
+        
+        myAnnotation = CustomPointAnnotation()
+        myAnnotation.title = "Hello"
+        myAnnotation.subtitle = "Nick"
+        myAnnotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        myAnnotation.pinImageName = "High Income"
+        annotationView = MKPinAnnotationView(annotation: myAnnotation, reuseIdentifier: "pin")
+        self.mapView.addAnnotation(annotationView.annotation!)
+    }
+    
+    func mapView(mapView: MKMapView,
+        viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
+            print("hello")
+            let reuseIdentifier = "pin"
+            
+            var v = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseIdentifier)
+            if v == nil {
+                v = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+                v!.canShowCallout = true
+            }
+            else {
+                v!.annotation = annotation
+            }
+            
+            let customPointAnnotation = annotation as! CustomPointAnnotation
+            v!.image = UIImage(named:customPointAnnotation.pinImageName)
+            
+            return v
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

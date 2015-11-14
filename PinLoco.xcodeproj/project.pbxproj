@@ -16,6 +16,7 @@
 		C30434711BF6EF8B006FB1B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */; };
 		C30434731BF6F0F5006FB1B9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */; };
 		C30434751BF6F113006FB1B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434741BF6F113006FB1B9 /* MapKit.framework */; };
+		C30434871BF70FBE006FB1B9 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30434861BF70FBE006FB1B9 /* CustomPointAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C30434741BF6F113006FB1B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C30434861BF70FBE006FB1B9 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPointAnnotation.swift; path = ../CustomPointAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		370093C01BF6EDEE000738AE /* PinLoco */ = {
 			isa = PBXGroup;
 			children = (
+				C30434861BF70FBE006FB1B9 /* CustomPointAnnotation.swift */,
 				C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */,
 				370093C11BF6EDEE000738AE /* AppDelegate.swift */,
 				370093C51BF6EDEE000738AE /* Main.storyboard */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				370093C21BF6EDEE000738AE /* AppDelegate.swift in Sources */,
+				C30434871BF70FBE006FB1B9 /* CustomPointAnnotation.swift in Sources */,
 				C30434711BF6EF8B006FB1B9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
