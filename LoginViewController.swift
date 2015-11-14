@@ -77,8 +77,8 @@ class LoginViewController: UIViewController {
                     }
                     
                 } else {
-                    let alertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .Alert)
-                    let OKAction = UIAlertAction(title: "DISMISS", style: .Default) { (action) in
+                    let alertController = UIAlertController(title: "Error", message: "Wrong Email/Password Combination", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "Dismiss", style: .Default) { (action) in
                         // ...
                     }
                     alertController.addAction(OKAction)

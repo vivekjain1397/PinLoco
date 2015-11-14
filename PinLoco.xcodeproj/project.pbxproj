@@ -30,6 +30,7 @@
 		C30434711BF6EF8B006FB1B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */; };
 		C30434731BF6F0F5006FB1B9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */; };
 		C30434751BF6F113006FB1B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434741BF6F113006FB1B9 /* MapKit.framework */; };
+		C36D21AD1BF74295008EA16B /* LeagueSpartan-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C36D21AC1BF74295008EA16B /* LeagueSpartan-Bold.otf */; };
 		C36EDCAA1BF730A900F10CBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCA91BF730A900F10CBB /* ProfileViewController.swift */; };
 		C36EDCAC1BF733DB00F10CBB /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCAB1BF733DB00F10CBB /* UploadViewController.swift */; };
 		C36EDCAE1BF733E700F10CBB /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCAD1BF733E700F10CBB /* ActivityViewController.swift */; };
@@ -84,6 +85,7 @@
 		C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C30434741BF6F113006FB1B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C36D21AC1BF74295008EA16B /* LeagueSpartan-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LeagueSpartan-Bold.otf"; path = "../../../../../Downloads/LeagueSpartan-Bold.otf"; sourceTree = "<group>"; };
 		C36EDCA91BF730A900F10CBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C36EDCAB1BF733DB00F10CBB /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		C36EDCAD1BF733E700F10CBB /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
@@ -166,12 +168,10 @@
 			children = (
 				57F690B91BF70E3000F274AD /* Bolts.framework */,
 				57F690BA1BF70E3000F274AD /* Parse.framework */,
-				370093C11BF6EDEE000738AE /* AppDelegate.swift */,
+				370093CD1BF6EDEE000738AE /* Info.plist */,
+				C36D21AE1BF7429F008EA16B /* Resources */,
 				C36EDCB01BF733FD00F10CBB /* View */,
 				C36EDCAF1BF733F200F10CBB /* Controllers */,
-				370093C81BF6EDEE000738AE /* Assets.xcassets */,
-				370093CA1BF6EDEE000738AE /* LaunchScreen.storyboard */,
-				370093CD1BF6EDEE000738AE /* Info.plist */,
 			);
 			path = PinLoco;
 			sourceTree = "<group>";
@@ -203,9 +203,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C36D21AE1BF7429F008EA16B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				370093C81BF6EDEE000738AE /* Assets.xcassets */,
+				C36D21AC1BF74295008EA16B /* LeagueSpartan-Bold.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		C36EDCAF1BF733F200F10CBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				370093C11BF6EDEE000738AE /* AppDelegate.swift */,
 				576323BF1BF6FBC10053364E /* LoginViewController.swift */,
 				57F690B71BF70CFE00F274AD /* SignupViewController.swift */,
 				C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */,
@@ -219,6 +229,7 @@
 		C36EDCB01BF733FD00F10CBB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				370093CA1BF6EDEE000738AE /* LaunchScreen.storyboard */,
 				370093C51BF6EDEE000738AE /* Main.storyboard */,
 			);
 			name = View;
@@ -346,6 +357,7 @@
 				370093CC1BF6EDEE000738AE /* LaunchScreen.storyboard in Resources */,
 				370093C91BF6EDEE000738AE /* Assets.xcassets in Resources */,
 				370093C71BF6EDEE000738AE /* Main.storyboard in Resources */,
+				C36D21AD1BF74295008EA16B /* LeagueSpartan-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

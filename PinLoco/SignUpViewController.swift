@@ -11,14 +11,23 @@ import Parse
 
 class SignupViewController: UIViewController {
 
+    @IBOutlet weak var signUpLabel: UILabel!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var pass: UITextField!
     @IBOutlet weak var confirmPass: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        firstName.attributedPlaceholder(string: "First Name", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+//        lastName.attributedPlaceholder(string: "Last Name", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+//        email.attributedPlaceholder(string: "Email", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+//        pass.attributedPlaceholder(string: "Password", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+//        confirmPass.attributedPlaceholder(string: "Confirm Password", attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+        
+        
         // Do any additional setup after loading the view.
     }
 

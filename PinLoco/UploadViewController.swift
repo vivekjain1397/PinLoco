@@ -16,8 +16,14 @@ class UploadViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+    }
+    
+   
+    
+    override func viewDidAppear(animated: Bool) {
         let pickerController = DKImagePickerController()
-        pickerController.sourceType = .Camera
+        //pickerController.sourceType = .Camera
         
         pickerController.didCancel = { () in
             print("didCancel")
@@ -26,11 +32,13 @@ class UploadViewController: UIViewController {
         pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
             print("didSelectAssets")
             print(assets)
-            
-            
         }
         
         self.presentViewController(pickerController, animated: true) {}
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {
