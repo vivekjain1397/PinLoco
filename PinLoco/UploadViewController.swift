@@ -13,6 +13,8 @@ import Parse
 class UploadViewController: UIViewController {
     var doUpload = true
     var images = [DKAsset]()
+    var x_coor = 0
+    var y_coor = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +36,10 @@ class UploadViewController: UIViewController {
         pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
             print("didSelectAssets")
             for pic in assets {
-                print(pic)
-                self.images.append(pic)
+                let imageView = UIImageView(image: pic.fullResolutionImage)
+                imageView.frame = CGRect(x: self.x_coor, y: self.y_coor,width: 200,height: 200)
+                self.y_coor += 200
+                self.view.addSubview(imageView)
             }
         }
         

@@ -10,6 +10,7 @@ import UIKit
 
 class ActivityViewController: UIViewController {
 
+    @IBOutlet weak var selectPhoto: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 

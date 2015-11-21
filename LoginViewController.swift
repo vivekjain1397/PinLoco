@@ -8,11 +8,14 @@
 
 import UIKit
 import Parse
+import MapKit
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPass: UITextField!
+    
+    let singleton = Singleton.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +74,8 @@ class LoginViewController: UIViewController {
                             self.presentViewController(viewController, animated: true, completion: nil)
                         })
                     }
+                    
+                    self.singleton.updateSingletonData()
                     alertController.addAction(OKAction)
                     self.presentViewController(alertController, animated: true) {
                         // ...

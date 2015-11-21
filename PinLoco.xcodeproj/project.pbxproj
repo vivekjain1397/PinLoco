@@ -30,9 +30,16 @@
 		C30434711BF6EF8B006FB1B9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */; };
 		C30434731BF6F0F5006FB1B9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */; };
 		C30434751BF6F113006FB1B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30434741BF6F113006FB1B9 /* MapKit.framework */; };
+		C352ACCA1BF851A900AEFBEE /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352ACC91BF851A900AEFBEE /* CustomImage.swift */; };
+		C352ACCE1BF8520700AEFBEE /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352ACCD1BF8520700AEFBEE /* Singleton.swift */; };
+		C352ACD21BF86CC300AEFBEE /* HomePhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352ACD11BF86CC300AEFBEE /* HomePhotoTableViewController.swift */; };
+		C352ACD41BF86ECC00AEFBEE /* HomePhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C352ACD31BF86ECC00AEFBEE /* HomePhotoTableViewCell.swift */; };
+		C352ACD61BF88D9400AEFBEE /* nickisgreat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C352ACD51BF88D9400AEFBEE /* nickisgreat.jpg */; };
 		C36EDCAA1BF730A900F10CBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCA91BF730A900F10CBB /* ProfileViewController.swift */; };
 		C36EDCAC1BF733DB00F10CBB /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCAB1BF733DB00F10CBB /* UploadViewController.swift */; };
 		C36EDCAE1BF733E700F10CBB /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCAD1BF733E700F10CBB /* ActivityViewController.swift */; };
+		C389D67D1BF80D4F00730971 /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C389D67C1BF80D4F00730971 /* ImageTableViewController.swift */; };
+		C389D67F1BF80EF000730971 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C389D67E1BF80EF000730971 /* ImageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,10 +91,18 @@
 		C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 		C30434721BF6F0F5006FB1B9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C30434741BF6F113006FB1B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C352ACC91BF851A900AEFBEE /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
+		C352ACCD1BF8520700AEFBEE /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		C352ACD11BF86CC300AEFBEE /* HomePhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePhotoTableViewController.swift; sourceTree = "<group>"; };
+		C352ACD31BF86ECC00AEFBEE /* HomePhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePhotoTableViewCell.swift; sourceTree = "<group>"; };
+		C352ACD51BF88D9400AEFBEE /* nickisgreat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nickisgreat.jpg; path = ../../../../../Downloads/nickisgreat.jpg; sourceTree = "<group>"; };
 		C36D21AC1BF74295008EA16B /* LeagueSpartan-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LeagueSpartan-Bold.otf"; path = "../../../../../Downloads/LeagueSpartan-Bold.otf"; sourceTree = "<group>"; };
 		C36EDCA91BF730A900F10CBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C36EDCAB1BF733DB00F10CBB /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		C36EDCAD1BF733E700F10CBB /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		C389D67C1BF80D4F00730971 /* ImageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
+		C389D67E1BF80EF000730971 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		C389D6811BF8133B00730971 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +185,7 @@
 				370093CD1BF6EDEE000738AE /* Info.plist */,
 				C36D21AE1BF7429F008EA16B /* Resources */,
 				C36EDCB01BF733FD00F10CBB /* View */,
+				C352ACCB1BF851BC00AEFBEE /* Models */,
 				C36EDCAF1BF733F200F10CBB /* Controllers */,
 			);
 			path = PinLoco;
@@ -202,9 +218,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C352ACCB1BF851BC00AEFBEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C352ACC91BF851A900AEFBEE /* CustomImage.swift */,
+				C352ACCD1BF8520700AEFBEE /* Singleton.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C36D21AE1BF7429F008EA16B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C389D6811BF8133B00730971 /* MyPlayground.playground */,
 				370093C81BF6EDEE000738AE /* Assets.xcassets */,
 				C36D21AC1BF74295008EA16B /* LeagueSpartan-Bold.otf */,
 			);
@@ -218,9 +244,12 @@
 				576323BF1BF6FBC10053364E /* LoginViewController.swift */,
 				57F690B71BF70CFE00F274AD /* SignupViewController.swift */,
 				C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */,
+				C352ACD11BF86CC300AEFBEE /* HomePhotoTableViewController.swift */,
+				C352ACD31BF86ECC00AEFBEE /* HomePhotoTableViewCell.swift */,
 				C36EDCAD1BF733E700F10CBB /* ActivityViewController.swift */,
 				C36EDCAB1BF733DB00F10CBB /* UploadViewController.swift */,
 				C36EDCA91BF730A900F10CBB /* ProfileViewController.swift */,
+				C389D6801BF80EFB00730971 /* SelectImageTable */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -230,8 +259,18 @@
 			children = (
 				370093CA1BF6EDEE000738AE /* LaunchScreen.storyboard */,
 				370093C51BF6EDEE000738AE /* Main.storyboard */,
+				C352ACD51BF88D9400AEFBEE /* nickisgreat.jpg */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		C389D6801BF80EFB00730971 /* SelectImageTable */ = {
+			isa = PBXGroup;
+			children = (
+				C389D67C1BF80D4F00730971 /* ImageTableViewController.swift */,
+				C389D67E1BF80EF000730971 /* ImageTableViewCell.swift */,
+			);
+			name = SelectImageTable;
 			sourceTree = "<group>";
 		};
 		E1F33641BCAF67DE612D342C /* Frameworks */ = {
@@ -353,6 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C352ACD61BF88D9400AEFBEE /* nickisgreat.jpg in Resources */,
 				370093CC1BF6EDEE000738AE /* LaunchScreen.storyboard in Resources */,
 				370093C91BF6EDEE000738AE /* Assets.xcassets in Resources */,
 				370093C71BF6EDEE000738AE /* Main.storyboard in Resources */,
@@ -429,12 +469,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				576323C01BF6FBC10053364E /* LoginViewController.swift in Sources */,
+				C352ACCE1BF8520700AEFBEE /* Singleton.swift in Sources */,
 				C36EDCAC1BF733DB00F10CBB /* UploadViewController.swift in Sources */,
 				370093C21BF6EDEE000738AE /* AppDelegate.swift in Sources */,
+				C352ACCA1BF851A900AEFBEE /* CustomImage.swift in Sources */,
+				C389D67F1BF80EF000730971 /* ImageTableViewCell.swift in Sources */,
+				C389D67D1BF80D4F00730971 /* ImageTableViewController.swift in Sources */,
 				C36EDCAA1BF730A900F10CBB /* ProfileViewController.swift in Sources */,
 				C36EDCAE1BF733E700F10CBB /* ActivityViewController.swift in Sources */,
+				C352ACD41BF86ECC00AEFBEE /* HomePhotoTableViewCell.swift in Sources */,
 				57F690B81BF70CFE00F274AD /* SignupViewController.swift in Sources */,
 				C30434711BF6EF8B006FB1B9 /* HomeViewController.swift in Sources */,
+				C352ACD21BF86CC300AEFBEE /* HomePhotoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +626,7 @@
 					"$(PROJECT_DIR)/PinLoco",
 				);
 				INFOPLIST_FILE = PinLoco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PinLoco.PinLoco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -596,6 +643,7 @@
 					"$(PROJECT_DIR)/PinLoco",
 				);
 				INFOPLIST_FILE = PinLoco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PinLoco.PinLoco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
