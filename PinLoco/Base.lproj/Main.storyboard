@@ -340,12 +340,21 @@
                                             <action selector="locateUser:" destination="LZP-zw-Crb" eventType="touchUpInside" id="XNZ-ZV-U23"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sv-Lz-y1U">
+                                        <rect key="frame" x="235" y="23" width="66" height="30"/>
+                                        <state key="normal" title="REFRESH"/>
+                                        <connections>
+                                            <action selector="refreshButton:" destination="LZP-zw-Crb" eventType="touchUpInside" id="mBE-vW-lc5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="FYi-2D-fnD"/>
                                     <constraint firstItem="zL8-aH-y9u" firstAttribute="bottom" secondItem="v39-wZ-n6s" secondAttribute="bottomMargin" constant="-4" id="M63-mF-lqS"/>
                                     <constraint firstItem="zL8-aH-y9u" firstAttribute="top" secondItem="v39-wZ-n6s" secondAttribute="top" constant="11" id="UW9-XS-kBf"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Sv-Lz-y1U" secondAttribute="trailing" constant="27" id="Xde-jc-yxk"/>
                                     <constraint firstItem="zL8-aH-y9u" firstAttribute="leading" secondItem="v39-wZ-n6s" secondAttribute="leading" constant="14" id="fWv-EB-lTY"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Sv-Lz-y1U" secondAttribute="bottom" constant="5" id="lNl-gH-sqi"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -745,23 +754,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGM-z9-aDI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2560.5" y="256.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="aXi-cF-BSC">
-            <objects>
-                <viewController id="VbX-LV-UNY" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1tG-UB-XKl"/>
-                        <viewControllerLayoutGuide type="bottom" id="oMg-6o-lkh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IHI-oz-j9t">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="80b-et-fXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

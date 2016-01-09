@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
                         })
                     }
                     
-                    self.singleton.updateSingletonData()
+//                    self.singleton.updateSingletonData()
                     alertController.addAction(OKAction)
                     self.presentViewController(alertController, animated: true) {
                         // ...

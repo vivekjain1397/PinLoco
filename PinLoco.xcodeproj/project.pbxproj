@@ -40,6 +40,7 @@
 		C36EDCAE1BF733E700F10CBB /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36EDCAD1BF733E700F10CBB /* ActivityViewController.swift */; };
 		C389D67D1BF80D4F00730971 /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C389D67C1BF80D4F00730971 /* ImageTableViewController.swift */; };
 		C389D67F1BF80EF000730971 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C389D67E1BF80EF000730971 /* ImageTableViewCell.swift */; };
+		C38BD08E1C3A446200734C28 /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38BD08D1C3A446200734C28 /* CustomPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		C389D67C1BF80D4F00730971 /* ImageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
 		C389D67E1BF80EF000730971 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		C389D6811BF8133B00730971 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		C38BD08D1C3A446200734C28 /* CustomPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 			children = (
 				C352ACC91BF851A900AEFBEE /* CustomImage.swift */,
 				C352ACCD1BF8520700AEFBEE /* Singleton.swift */,
+				C38BD08D1C3A446200734C28 /* CustomPin.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 		C36D21AE1BF7429F008EA16B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				370093C11BF6EDEE000738AE /* AppDelegate.swift */,
 				C389D6811BF8133B00730971 /* MyPlayground.playground */,
 				370093C81BF6EDEE000738AE /* Assets.xcassets */,
 				C36D21AC1BF74295008EA16B /* LeagueSpartan-Bold.otf */,
@@ -240,9 +244,7 @@
 		C36EDCAF1BF733F200F10CBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				370093C11BF6EDEE000738AE /* AppDelegate.swift */,
-				576323BF1BF6FBC10053364E /* LoginViewController.swift */,
-				57F690B71BF70CFE00F274AD /* SignupViewController.swift */,
+				C38BD08C1C3A3FBE00734C28 /* Login */,
 				C30434701BF6EF8B006FB1B9 /* HomeViewController.swift */,
 				C352ACD11BF86CC300AEFBEE /* HomePhotoTableViewController.swift */,
 				C352ACD31BF86ECC00AEFBEE /* HomePhotoTableViewCell.swift */,
@@ -271,6 +273,15 @@
 				C389D67E1BF80EF000730971 /* ImageTableViewCell.swift */,
 			);
 			name = SelectImageTable;
+			sourceTree = "<group>";
+		};
+		C38BD08C1C3A3FBE00734C28 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				576323BF1BF6FBC10053364E /* LoginViewController.swift */,
+				57F690B71BF70CFE00F274AD /* SignupViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		E1F33641BCAF67DE612D342C /* Frameworks */ = {
@@ -351,6 +362,7 @@
 				TargetAttributes = {
 					370093BD1BF6EDEE000738AE = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = BWX5BKUT9S;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -477,6 +489,7 @@
 				C389D67D1BF80D4F00730971 /* ImageTableViewController.swift in Sources */,
 				C36EDCAA1BF730A900F10CBB /* ProfileViewController.swift in Sources */,
 				C36EDCAE1BF733E700F10CBB /* ActivityViewController.swift in Sources */,
+				C38BD08E1C3A446200734C28 /* CustomPin.swift in Sources */,
 				C352ACD41BF86ECC00AEFBEE /* HomePhotoTableViewCell.swift in Sources */,
 				57F690B81BF70CFE00F274AD /* SignupViewController.swift in Sources */,
 				C30434711BF6EF8B006FB1B9 /* HomeViewController.swift in Sources */,
@@ -621,6 +634,8 @@
 			baseConfigurationReference = 89EA1CB3A18F66A3AED1549A /* Pods-PinLoco.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PinLoco",
@@ -630,6 +645,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PinLoco.PinLoco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -638,6 +654,8 @@
 			baseConfigurationReference = 0C70D3FC8BFE4D3529B1F0C9 /* Pods-PinLoco.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PinLoco",
@@ -647,6 +665,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PinLoco.PinLoco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

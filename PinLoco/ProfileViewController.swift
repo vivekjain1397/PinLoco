@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         
-        self.singleton.updateSingletonData()
+//        self.singleton.updateSingletonData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnotations", name: singletonUpdatedKey, object: nil)
         //        loadAnnotations()
 
@@ -64,7 +64,7 @@ class ProfileViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         for (p, _) in singleton.userData {
             //            var annotationView: MKPinAnnotationView!
             self.mapView.addAnnotation(p)
-            print(p.coordinate)
+//            print(p.coordinate)
         }
     }
     
@@ -73,7 +73,7 @@ class ProfileViewController: UIViewController, MKMapViewDelegate, CLLocationMana
         let long = -122.0419
         
         
-        var myAnnotation = MKPointAnnotation()
+        let myAnnotation = MKPointAnnotation()
         
         myAnnotation.title = "Hello"
         myAnnotation.subtitle = "Nick"

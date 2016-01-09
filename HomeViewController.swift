@@ -13,11 +13,58 @@ import Parse
 
 class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    let singleton = Singleton.sharedInstance
+    // MARK: Properties
     
+    let singleton = Singleton.sharedInstance
+    var lastUpdatedtime: NSDate!
+    
+    @IBAction func refreshButton(sender: AnyObject) {
+        refreshNewPins()
+    }
+    
+    func refreshNewPins() {
+        print("Request pins from model")
+        let query = PFQuery(className: "Pin")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        query.findObjectsInBackgroundWithBlock {
+            (pins: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // Find succeeded
+                print("Successfully retrieved \(pins!.count) pins")
+                if let pins = pins {
+                    for p in pins {
+                        // if pin.createdAt is after lastUpdatedTime
+                        if true {
+                            print("Annotating new pin onto map")
+                            // create the map annotation object
+                            let pin = CustomPin()
+                            if let location = p["location"] {
+                                pin.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                                self.mapView.addAnnotation(pin)
+                            }
+                            
+                            
+                            pin.id = "Lol"
+                            let firstName = PFUser.currentUser()!["firstName"] as? String
+                            let lastName = PFUser.currentUser()!["lastName"] as? String
+                            pin.title = firstName! + " " + lastName!
+                            pin.subtitle = PFUser.currentUser()!["avgScore"] as? String
+                            pin.id = p.objectId!
+                            
+                            // add to the map
+                            
+                        } else {
+                            print("Already found pin on map")
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
     
     @IBOutlet weak var selectPhotoButton: UIButton!
-//    let userData: [CustomPointAnnotation: CustomImage] = [:]
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
@@ -35,48 +82,23 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             self.mapView.setRegion(region, animated: true)
             self.locationManager.stopUpdatingLocation()
         }
-        
-//        addAnnotation()
     }
+    
     override func viewDidAppear(animated: Bool) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.doUpload = true
-        loadAnnotations()
+//        self.singleton.updateSingletonData()
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnotations", name: singletonUpdatedKey, object: nil)
+        
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
-        
-        self.singleton.updateSingletonData()
-        print("From HomeViewController.swift <loadAnnotations>: Hello")
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnotations", name: singletonUpdatedKey, object: nil)
-
-
-        loadAnnotations()
-        
-        
-        
-//        addAnnotation()
-        
-//        UIImage *annotationImage = [UIImage imageNamed:@"annotation-image"]; //NOTE: Using a UIImageView will not work
-//        annotationView.image = annotationImage; // NOTE: Make sure annotationView is an instance of MKAn
-    }
-    
-    func loadAnnotations() {
-        
-        print("From HomeViewController.swift <loadAnnotations>: Hello")
-        print("From HomeViewController.swift <loadAnnotations>: ", singleton.userData)
-        for (p, _) in singleton.userData{
-//            var annotationView: MKPinAnnotationView!
-            self.mapView.addAnnotation(p)
-            print(p.coordinate)
-        }
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -87,7 +109,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         let reuseId = String(stringInterpolationSegment: annotation.coordinate.longitude)
         
-        
         var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if pinView == nil {
             
@@ -96,7 +117,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             pinView!.image = pinImage
             pinView!.canShowCallout = true
             pinView?.centerOffset = CGPointMake(0, -(pinImage!.size.height/2))
-            
             
         }
         
