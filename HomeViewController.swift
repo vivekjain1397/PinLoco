@@ -14,54 +14,14 @@ import Parse
 class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     // MARK: Properties
-    
+    var storedPinIDs: [String] = []
     let singleton = Singleton.sharedInstance
-    var lastUpdatedtime: NSDate!
+//    var lastUpdatedtime: NSDate!
     
     @IBAction func refreshButton(sender: AnyObject) {
+//        let lat = self.mapView.centerCoordinate.latitude
+//        let long = self.mapView.centerCoordinate.longitude
         refreshNewPins()
-    }
-    
-    func refreshNewPins() {
-        print("Request pins from model")
-        let query = PFQuery(className: "Pin")
-        query.whereKey("user", equalTo: PFUser.currentUser()!)
-        query.findObjectsInBackgroundWithBlock {
-            (pins: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // Find succeeded
-                print("Successfully retrieved \(pins!.count) pins")
-                if let pins = pins {
-                    for p in pins {
-                        // if pin.createdAt is after lastUpdatedTime
-                        if true {
-                            print("Annotating new pin onto map")
-                            // create the map annotation object
-                            let pin = CustomPin()
-                            if let location = p["location"] {
-                                pin.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-                                self.mapView.addAnnotation(pin)
-                            }
-                            
-                            
-                            pin.id = "Lol"
-                            let firstName = PFUser.currentUser()!["firstName"] as? String
-                            let lastName = PFUser.currentUser()!["lastName"] as? String
-                            pin.title = firstName! + " " + lastName!
-                            pin.subtitle = PFUser.currentUser()!["avgScore"] as? String
-                            pin.id = p.objectId!
-                            
-                            // add to the map
-                            
-                        } else {
-                            print("Already found pin on map")
-                        }
-                    }
-                }
-                
-            }
-        }
     }
     
     @IBOutlet weak var selectPhotoButton: UIButton!
@@ -84,21 +44,72 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
-//        self.singleton.updateSingletonData()
+    func refreshNewPins() {
 
+        print("Requesting pins from model")
+        var newPinsAdded = 0
+        let query = PFQuery(className: "Pin")
+        query.whereKey("user", equalTo: PFUser.currentUser()!)
+        query.findObjectsInBackgroundWithBlock {
+            (pins: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // Find succeeded
+//                print("Successfully retrieved \(pins!.count) pins")
+                if let pins = pins {
+                    for p in pins {
+                        let pinID = p.objectId!
+                        if !(self.storedPinIDs.contains(pinID)) {
+                            
+                            // create the map annotation object
+                            let pin = CustomPin()
+                            let firstName = PFUser.currentUser()!["firstName"] as? String
+                            let lastName = PFUser.currentUser()!["lastName"] as? String
+                            pin.title = firstName! + " " + lastName!
+                            pin.subtitle = PFUser.currentUser()!["avgScore"] as? String
+                            pin.id = p.objectId!
+                            
+                            // add to the map
+                            if let location = p["location"] {
+                                pin.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                                if MKMapRectContainsPoint(self.mapView.visibleMapRect, MKMapPointForCoordinate(pin.coordinate)) {
+                                    self.mapView.addAnnotation(pin)
+                                    self.storedPinIDs.append(pinID)
+                                    newPinsAdded++
+                                    // print("Annotating new pin")
+                                }
+                            }
+                        }
+                    }
+                    if newPinsAdded == 0 {
+                        print("No new pins to add\n")
+                    } else {
+                        print("Success! Added \(newPinsAdded) pins\n")
+                    }
+                    
+                }
+            }
+        }
+        
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnotations", name: singletonUpdatedKey, object: nil)
         
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
+        let currentLat = self.locationManager.location?.coordinate.latitude
+        let currentLong = self.locationManager.location?.coordinate.longitude
+        self.mapView.centerCoordinate = CLLocationCoordinate2DMake(currentLat!, currentLong!)
+        
+        refreshNewPins()
+        
+        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnotations", name: singletonUpdatedKey, object: nil)
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
