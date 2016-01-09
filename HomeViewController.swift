@@ -16,12 +16,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     // MARK: Properties
     var storedPinIDs: [String] = []
     let singleton = Singleton.sharedInstance
+    var numberOfTimesLoaded = 0
 //    var lastUpdatedtime: NSDate!
     
     @IBAction func refreshButton(sender: AnyObject) {
 //        let lat = self.mapView.centerCoordinate.latitude
 //        let long = self.mapView.centerCoordinate.longitude
-        refreshNewPins()
+        refreshNewPins(self.mapView.visibleMapRect)
     }
     
     @IBOutlet weak var selectPhotoButton: UIButton!
@@ -44,7 +45,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
     }
     
-    func refreshNewPins() {
+    func refreshNewPins(visibleMapRectangle: MKMapRect) {
 
         print("Requesting pins from model")
         var newPinsAdded = 0
@@ -72,7 +73,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                             // add to the map
                             if let location = p["location"] {
                                 pin.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-                                if MKMapRectContainsPoint(self.mapView.visibleMapRect, MKMapPointForCoordinate(pin.coordinate)) {
+                                if MKMapRectContainsPoint(visibleMapRectangle, MKMapPointForCoordinate(pin.coordinate)) {
                                     self.mapView.addAnnotation(pin)
                                     self.storedPinIDs.append(pinID)
                                     newPinsAdded++
@@ -86,31 +87,46 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     } else {
                         print("Success! Added \(newPinsAdded) pins\n")
                     }
-                    
                 }
             }
         }
-        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
-        let currentLat = self.locationManager.location?.coordinate.latitude
-        let currentLong = self.locationManager.location?.coordinate.longitude
-        self.mapView.centerCoordinate = CLLocationCoordinate2DMake(currentLat!, currentLong!)
-        
-        refreshNewPins()
+
         
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnotations", name: singletonUpdatedKey, object: nil)
     }
+    
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+//        print("Updated user location")
+        let currentLat = self.locationManager.location?.coordinate.latitude
+        let currentLong = self.locationManager.location?.coordinate.longitude
+        let center = CLLocationCoordinate2D(latitude: currentLat!, longitude: currentLong!)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        let rect = MKMapRectForCoordinateRegion(region)
+        self.numberOfTimesLoaded++
+        
+        if numberOfTimesLoaded == 1 {
+//            print("Loading pins automatically")
+            refreshNewPins(rect)
+        }
+    }
+    
+    func MKMapRectForCoordinateRegion(region: MKCoordinateRegion) -> MKMapRect {
+        let a = MKMapPointForCoordinate(CLLocationCoordinate2DMake(region.center.latitude + region.span.latitudeDelta / 2, region.center.longitude - region.span.longitudeDelta / 2))
+        let b = MKMapPointForCoordinate(CLLocationCoordinate2DMake(region.center.latitude - region.span.latitudeDelta / 2, region.center.longitude + region.span.longitudeDelta / 2))
+        return MKMapRectMake(fmin(a.x, b.x), fmin(a.y, b.y), fabs(a.x - b.x), fabs(a.y - b.y))
+    }
+    
+
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
     
