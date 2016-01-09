@@ -17,11 +17,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var storedPinIDs: [String] = []
     let singleton = Singleton.sharedInstance
     var numberOfTimesLoaded = 0
-//    var lastUpdatedtime: NSDate!
     
     @IBAction func refreshButton(sender: AnyObject) {
-//        let lat = self.mapView.centerCoordinate.latitude
-//        let long = self.mapView.centerCoordinate.longitude
         refreshNewPins(self.mapView.visibleMapRect)
     }
     
@@ -56,19 +53,15 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             
             if error == nil {
                 // Find succeeded
-//                print("Successfully retrieved \(pins!.count) pins")
+                // print("Successfully retrieved \(pins!.count) pins")
                 if let pins = pins {
                     for p in pins {
                         let pinID = p.objectId!
                         if !(self.storedPinIDs.contains(pinID)) {
                             
                             // create the map annotation object
-                            let pin = CustomPin()
-                            let firstName = PFUser.currentUser()!["firstName"] as? String
-                            let lastName = PFUser.currentUser()!["lastName"] as? String
-                            pin.title = firstName! + " " + lastName!
-                            pin.subtitle = PFUser.currentUser()!["avgScore"] as? String
-                            pin.id = p.objectId!
+                            let pin = MKPointAnnotation()
+                            pin.title = pinID
                             
                             // add to the map
                             if let location = p["location"] {
@@ -84,6 +77,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     }
                     if newPinsAdded == 0 {
                         print("No new pins to add\n")
+                    } else if newPinsAdded == 1 {
+                        print("Success! Added 1 pin\n")
                     } else {
                         print("Success! Added \(newPinsAdded) pins\n")
                     }
@@ -100,63 +95,68 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
-
-        
-        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadAnnotations", name: singletonUpdatedKey, object: nil)
     }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-//        print("Updated user location")
+        // called when the map has found the user's location
         let currentLat = self.locationManager.location?.coordinate.latitude
         let currentLong = self.locationManager.location?.coordinate.longitude
         let center = CLLocationCoordinate2D(latitude: currentLat!, longitude: currentLong!)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        // manually generates an MKMapRect based on user's current location regardless of current map view zoom
         let rect = MKMapRectForCoordinateRegion(region)
         self.numberOfTimesLoaded++
         
         if numberOfTimesLoaded == 1 {
-//            print("Loading pins automatically")
+            // allows automatic refresh only one time
             refreshNewPins(rect)
         }
     }
     
     func MKMapRectForCoordinateRegion(region: MKCoordinateRegion) -> MKMapRect {
+        // returns an MKMapRect when passed in a MKCoordinateRegion
         let a = MKMapPointForCoordinate(CLLocationCoordinate2DMake(region.center.latitude + region.span.latitudeDelta / 2, region.center.longitude - region.span.longitudeDelta / 2))
         let b = MKMapPointForCoordinate(CLLocationCoordinate2DMake(region.center.latitude - region.span.latitudeDelta / 2, region.center.longitude + region.span.longitudeDelta / 2))
         return MKMapRectMake(fmin(a.x, b.x), fmin(a.y, b.y), fabs(a.x - b.x), fabs(a.y - b.y))
     }
     
-
-    
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-    
         if annotation is MKUserLocation {
             return nil
         }
         
         let reuseId = String(stringInterpolationSegment: annotation.coordinate.longitude)
-        
         var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if pinView == nil {
-            
             pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             let pinImage = UIImage(named:"map_pin.png")
-            pinView!.image = pinImage
-            pinView!.canShowCallout = true
+            pinView?.image = pinImage
             pinView?.centerOffset = CGPointMake(0, -(pinImage!.size.height/2))
             
+            // set to false to disable callout bubble
+            pinView?.canShowCallout = true
         }
         
-//        anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-//        anView.image = UIImage(named:"1.png")
-//        anView.canShowCallout = true
-        
-        let button = UIButton(type: UIButtonType.DetailDisclosure)
-        button.addTarget(self, action: "pin_press:", forControlEvents: .TouchUpInside)
-        pinView?.rightCalloutAccessoryView = button
+//        let button = UIButton(type: UIButtonType.DetailDisclosure)
+//        button.addTarget(self, action: "pin_press:", forControlEvents: .TouchUpInside)
+//        pinView?.rightCalloutAccessoryView = button
         
         return pinView
     }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        if let pin = view.annotation {
+            if let title = pin.title {
+                print("pin with id \"\(title!)\" pressed")
+                let query = PFQuery(className: "Photo")
+                query.whereKey("pin", equalTo: title!)
+            }
+        }
+    }
+    
+    
+    
+    
     
 //    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 //        if control == view.rightCalloutAccessoryView {
@@ -187,8 +187,8 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
         homePhotoTableViewController!.imageList = images
         self.navigationController?.pushViewController(homePhotoTableViewController!, animated: true)
-        print(images)
-        print("L:LSDKJ")
+//        print(images)
+//        print("L:LSDKJ")
 //        self.navigationController?.performSegueWithIdentifier("pinToPhotoTableSegue", sender: self)
         
     }
