@@ -147,16 +147,34 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
         if let pin = view.annotation {
             if let title = pin.title {
-                print("pin with id \"\(title!)\" pressed")
-                let query = PFQuery(className: "Photo")
-                query.whereKey("pin", equalTo: title!)
+                print("pin with id \"\(title)\" pressed")
+                let pinQuery = PFQuery(className: "Pin")
+                pinQuery.whereKey("objectId", equalTo: title!)
+                pinQuery.findObjectsInBackgroundWithBlock {
+                    (pin: [PFObject]?, error: NSError?) -> Void in
+                    
+                    if error == nil {
+                        if let pin = pin {
+                            for p in pin {
+                                let imageQuery = PFQuery(className: "Photo")
+                                imageQuery.whereKey("pin", equalTo: p)
+                                imageQuery.findObjectsInBackgroundWithBlock {
+                                    (images: [PFObject]?, error2: NSError?) -> Void in
+                                    
+                                    if error2 == nil {
+                                        if let images = images {
+                                            print(images)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
-    
-    
-    
-    
+   
     
 //    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 //        if control == view.rightCalloutAccessoryView {
