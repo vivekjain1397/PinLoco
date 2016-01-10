@@ -18,6 +18,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     let singleton = Singleton.sharedInstance
     var numberOfTimesLoaded = 0
     
+    @IBOutlet weak var pinDetailPeekView: UIView!
+    @IBOutlet weak var userPeekView: UIView!
+    
     @IBAction func refreshButton(sender: AnyObject) {
         refreshNewPins(self.mapView.visibleMapRect)
     }
@@ -44,7 +47,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     func refreshNewPins(visibleMapRectangle: MKMapRect) {
 
-        print("Requesting pins from model")
+        print("\nRequesting pins from model")
         var newPinsAdded = 0
         let query = PFQuery(className: "Pin")
         query.whereKey("user", equalTo: PFUser.currentUser()!)
@@ -90,11 +93,58 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pinDetailPeekView.layer.shadowColor = UIColor.blackColor().CGColor
+        pinDetailPeekView.layer.shadowOffset = CGSizeZero
+        pinDetailPeekView.layer.shadowRadius = 1.0
+        pinDetailPeekView.layer.shadowOpacity = 0.3
+        
+        userPeekView.layer.shadowColor = UIColor.blackColor().CGColor
+        userPeekView.layer.shadowOffset = CGSizeZero
+        userPeekView.layer.shadowRadius = 1.0
+        userPeekView.layer.shadowOpacity = 0.3
+        
+        self.mapView.rotateEnabled = false
+        
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
+    }
+    
+    func mapView(mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        UIView.animateWithDuration(0.2, delay: 0.0, options: .CurveEaseOut, animations: {
+            var finalBottomFrame = self.pinDetailPeekView.frame
+            finalBottomFrame.origin.y += finalBottomFrame.size.height
+            
+            var finalTopFrame = self.userPeekView.frame
+            finalTopFrame.origin.y -= finalTopFrame.size.height + (self.userPeekView.center.y - self.userPeekView.frame.height / 2)
+            
+            self.pinDetailPeekView.frame = finalBottomFrame
+            self.userPeekView.frame = finalTopFrame
+            }, completion: { finished in
+//                print("Map region changing")
+            })
+    }
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseOut, animations: {
+            var finalBottomFrame = self.pinDetailPeekView.frame
+            finalBottomFrame.origin.y -= finalBottomFrame.size.height
+            
+            var finalTopFrame = self.userPeekView.frame
+            finalTopFrame.origin.y += finalTopFrame.size.height - self.userPeekView.center.y
+            
+            self.pinDetailPeekView.frame = finalBottomFrame
+            self.userPeekView.frame = finalTopFrame
+            }, completion: { finished in
+//                print("Map region finished changing")
+        })
+        
+        if numberOfTimesLoaded > 1 {
+            refreshNewPins(self.mapView.visibleMapRect)
+        }
     }
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
@@ -111,6 +161,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             // allows automatic refresh only one time
             refreshNewPins(rect)
         }
+        self.numberOfTimesLoaded++
     }
     
     func MKMapRectForCoordinateRegion(region: MKCoordinateRegion) -> MKMapRect {

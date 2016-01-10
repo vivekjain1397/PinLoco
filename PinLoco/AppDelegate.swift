@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         else {
-            initialViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! UITabBarController
+            initialViewController = storyboard.instantiateViewControllerWithIdentifier("Home") as! HomeViewController
         }
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
