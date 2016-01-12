@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var numberOfTimesLoaded = 0
     
     @IBOutlet weak var pinDetailPeekView: UIView!
+//    @IBOutlet weak var pinImageTest: UIImageView!
     @IBOutlet weak var userPeekView: UIView!
     
     @IBAction func refreshButton(sender: AnyObject) {
@@ -90,9 +91,19 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
     }
     
+    @IBOutlet weak var imageScrollView: UIScrollView!
+    @IBOutlet weak var imageStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        
+//        let insets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+//        imageScrollView.contentInset = insets
+//        imageScrollView.scrollIndicatorInsets = insets
+//        imageScrollView.showsHorizontalScrollIndicator = false
+//        imageScrollView.showsVerticalScrollIndicator = false
+        imageScrollView.translatesAutoresizingMaskIntoConstraints = false
+        imageStackView.translatesAutoresizingMaskIntoConstraints = false
         
         pinDetailPeekView.layer.shadowColor = UIColor.blackColor().CGColor
         pinDetailPeekView.layer.shadowOffset = CGSizeZero
@@ -112,6 +123,105 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
     }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        if let pin = view.annotation {
+            if let title = pin.title {
+                print("pin with id \"\(title!)\" pressed")
+                let pinQuery = PFQuery(className: "Pin")
+                pinQuery.whereKey("objectId", equalTo: title!)
+                pinQuery.findObjectsInBackgroundWithBlock {
+                    (pin: [PFObject]?, error: NSError?) -> Void in
+                    
+                    if error == nil {
+                        if let pin = pin {
+                            for p in pin {
+                                let imageQuery = PFQuery(className: "Photo")
+                                imageQuery.whereKey("pin", equalTo: p)
+                                imageQuery.findObjectsInBackgroundWithBlock {
+                                    (images: [PFObject]?, error2: NSError?) -> Void in
+                                    
+                                    if error2 == nil {
+                                        if let images = images {
+                                            for i in images {
+                                                let pic = i["imageFile"] as! PFFile
+                                                pic.getDataInBackgroundWithBlock {
+                                                    (imageData: NSData?, error: NSError?) -> Void in
+                                                    if error == nil {
+                                                        if let imageData = imageData {
+                                                            let image = UIImage(data: imageData)
+                                                            self.appendImageViewToStack(image)
+                                                            //                                                        self.pinImageTest.image = image
+                                                            //                                                        image?.size.
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func appendImageViewToStack(image: UIImage?) {
+        print("Appending image")
+        
+        let stack = imageStackView
+        let newImageView = createViewEmbeddedWithImage(image)
+        
+        newImageView.hidden = true
+        
+//        let anotherview = createViewEmbeddedWithImage(image)
+//        anotherview.hidden = true
+        stack.addArrangedSubview(newImageView)
+//        stack.addArrangedSubview(anotherview)
+        
+        UIView.animateWithDuration(0.2, animations: {
+            newImageView.hidden = false
+//            anotherview.hidden = false
+        })
+    }
+    
+    private func createViewEmbeddedWithImage(image: UIImage?) -> UIView {
+        let height = imageStackView.frame.height
+        let sizeMultiplier: CGFloat = (image?.size.height)! / height
+        let width = (image?.size.width)! / sizeMultiplier
+        
+        let imageViewFrame = CGRectMake(0, 0, width, height)
+//        let view = UIView(frame: viewFrame)
+        
+
+        let imageView = UIImageView(image: image)
+//        imageView.backgroundColor = UIColor.blackColor()
+        imageView.bounds = imageViewFrame
+//        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+//        imageView.clipsToBounds = false
+        print(imageView.frame.width)
+        print(image?.size.width)
+        print(imageView.frame.height)
+        print(image?.size.height)
+        print(imageStackView.frame.height)
+        print(imageStackView.frame.width)
+        
+        let constraintImageViewWidth = NSLayoutConstraint (item: imageView,
+            attribute: NSLayoutAttribute.Width,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1,
+            constant: width)
+        imageView.addConstraint(constraintImageViewWidth)
+        
+        return imageView
+    }
+    
+    
     
     func mapView(mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         UIView.animateWithDuration(0.2, delay: 0.0, options: .CurveEaseOut, animations: {
@@ -193,37 +303,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 //        pinView?.rightCalloutAccessoryView = button
         
         return pinView
-    }
-    
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        if let pin = view.annotation {
-            if let title = pin.title {
-                print("pin with id \"\(title)\" pressed")
-                let pinQuery = PFQuery(className: "Pin")
-                pinQuery.whereKey("objectId", equalTo: title!)
-                pinQuery.findObjectsInBackgroundWithBlock {
-                    (pin: [PFObject]?, error: NSError?) -> Void in
-                    
-                    if error == nil {
-                        if let pin = pin {
-                            for p in pin {
-                                let imageQuery = PFQuery(className: "Photo")
-                                imageQuery.whereKey("pin", equalTo: p)
-                                imageQuery.findObjectsInBackgroundWithBlock {
-                                    (images: [PFObject]?, error2: NSError?) -> Void in
-                                    
-                                    if error2 == nil {
-                                        if let images = images {
-                                            print(images)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
    
     
