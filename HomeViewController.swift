@@ -125,6 +125,11 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        // remove stackview 
+        for view in self.imageStackView.arrangedSubviews {
+            view.removeFromSuperview()
+        }
+        
         if let pin = view.annotation {
             if let title = pin.title {
                 print("pin with id \"\(title!)\" pressed")
@@ -196,12 +201,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let imageViewFrame = CGRectMake(0, 0, width, height)
 //        let view = UIView(frame: viewFrame)
         
-
         let imageView = UIImageView(image: image)
 //        imageView.backgroundColor = UIColor.blackColor()
         imageView.bounds = imageViewFrame
-//        imageView.contentMode = UIViewContentMode.ScaleAspectFill
-//        imageView.clipsToBounds = false
+        
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.clipsToBounds = true
+        
         print(imageView.frame.width)
         print(image?.size.width)
         print(imageView.frame.height)
@@ -221,8 +227,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         return imageView
     }
     
-    
-    
     func mapView(mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         UIView.animateWithDuration(0.2, delay: 0.0, options: .CurveEaseOut, animations: {
             var finalBottomFrame = self.pinDetailPeekView.frame
@@ -234,7 +238,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             self.pinDetailPeekView.frame = finalBottomFrame
             self.userPeekView.frame = finalTopFrame
             }, completion: { finished in
-//                print("Map region changing")
+                // print("Map region changing")
             })
     }
     
@@ -249,7 +253,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             self.pinDetailPeekView.frame = finalBottomFrame
             self.userPeekView.frame = finalTopFrame
             }, completion: { finished in
-//                print("Map region finished changing")
+            // print("Map region finished changing")
         })
         
         if numberOfTimesLoaded > 1 {
@@ -274,13 +278,14 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         self.numberOfTimesLoaded++
     }
     
+    // returns an MKMapRect when passed in a MKCoordinateRegion
     func MKMapRectForCoordinateRegion(region: MKCoordinateRegion) -> MKMapRect {
-        // returns an MKMapRect when passed in a MKCoordinateRegion
         let a = MKMapPointForCoordinate(CLLocationCoordinate2DMake(region.center.latitude + region.span.latitudeDelta / 2, region.center.longitude - region.span.longitudeDelta / 2))
         let b = MKMapPointForCoordinate(CLLocationCoordinate2DMake(region.center.latitude - region.span.latitudeDelta / 2, region.center.longitude + region.span.longitudeDelta / 2))
         return MKMapRectMake(fmin(a.x, b.x), fmin(a.y, b.y), fabs(a.x - b.x), fabs(a.y - b.y))
     }
     
+    // Sets up the annotation pins
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil

@@ -351,7 +351,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKc-Xz-Wwu">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
                                         <subviews>
-                                            <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" distribution="equalCentering" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="33G-fD-7zh">
+                                            <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFill" distribution="equalSpacing" alignment="firstBaseline" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33G-fD-7zh">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="101" id="KvK-en-CMW"/>
@@ -359,12 +359,12 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="33G-fD-7zh" firstAttribute="top" secondItem="PKc-Xz-Wwu" secondAttribute="top" id="2b5-Ci-ZiO"/>
-                                            <constraint firstAttribute="bottom" secondItem="33G-fD-7zh" secondAttribute="bottom" id="5vf-kR-jG8"/>
-                                            <constraint firstItem="33G-fD-7zh" firstAttribute="leading" secondItem="PKc-Xz-Wwu" secondAttribute="leading" id="9zh-LR-b5D"/>
-                                            <constraint firstItem="33G-fD-7zh" firstAttribute="centerX" secondItem="PKc-Xz-Wwu" secondAttribute="centerX" id="Fy2-mq-cUY"/>
+                                            <constraint firstItem="33G-fD-7zh" firstAttribute="leading" secondItem="PKc-Xz-Wwu" secondAttribute="leading" id="84n-gR-5AA"/>
+                                            <constraint firstAttribute="bottom" secondItem="33G-fD-7zh" secondAttribute="bottom" id="B0Q-xr-aNK"/>
                                             <constraint firstItem="33G-fD-7zh" firstAttribute="height" secondItem="PKc-Xz-Wwu" secondAttribute="height" id="KRG-ef-dSZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="33G-fD-7zh" secondAttribute="trailing" id="SbV-6m-dDw"/>
+                                            <constraint firstItem="33G-fD-7zh" firstAttribute="centerX" secondItem="PKc-Xz-Wwu" secondAttribute="centerX" id="Qa4-28-mo2"/>
+                                            <constraint firstItem="33G-fD-7zh" firstAttribute="top" secondItem="PKc-Xz-Wwu" secondAttribute="top" id="c2R-O1-xDo"/>
+                                            <constraint firstAttribute="trailing" secondItem="33G-fD-7zh" secondAttribute="trailing" id="z5D-I3-VNt"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
@@ -415,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ua-SH-Ecu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="-523"/>
+            <point key="canvasLocation" x="1935" y="-535"/>
         </scene>
         <!--Home Photo Table View Controller-->
         <scene sceneID="mhK-vb-RbN">
@@ -507,11 +507,11 @@
             <objects>
                 <tableViewController id="IPz-dM-OaH" customClass="ImageTableViewController" customModule="PinLoco" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="28" sectionFooterHeight="28" id="bs1-gK-wov">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="K5A-J3-FUS">
-                            <rect key="frame" x="0.0" y="193" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="292" width="430" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                             <items>
@@ -527,13 +527,13 @@
                         </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" rowHeight="101" id="WwE-lC-6py" customClass="ImageTableViewCell" customModule="PinLoco" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="320" height="101"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WwE-lC-6py" id="8sS-ak-jSq">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Click to add title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFY-L1-NMo">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Click to add title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFY-L1-NMo">
                                             <rect key="frame" x="108" y="8" width="204" height="93"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -707,6 +707,6 @@
         <image name="nickisgreat.jpg" width="1366" height="1366"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GOb-hk-XWh"/>
+        <segue reference="D1L-KO-z4Q"/>
     </inferredMetricsTieBreakers>
 </document>
